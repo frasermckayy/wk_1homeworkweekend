@@ -72,3 +72,10 @@ def customer_pet_count(customers)
      return customers[:pets].length
    end
 end
+
+
+def customer_can_afford_pet(customers, new_pet)
+  customers[:cash] < new_pet[:price] ? true : false
+  return false if customers[:cash] < new_pet[:price]
+
+end
