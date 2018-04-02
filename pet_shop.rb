@@ -89,8 +89,8 @@ end
 #just managing to get the basic code down never mind the refactored code or the "simpler" verisons
 
 
-def sell_pet_to_customer(pet_shop, pets, customer)
+def sell_pet_to_customer(pet_shop, pet, customer)
  add_pet_to_customer(customer, pet)
   increase_pets_sold(pet_shop, 1)
-  add_total_remove_total(pet_shop, pets[:price])
+  add_or_remove_cash(pet_shop, pet[:price])
 end
