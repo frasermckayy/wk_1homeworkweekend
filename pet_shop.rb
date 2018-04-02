@@ -28,6 +28,9 @@ def stock_count(pet_shop)
   return pet_shop[:pets].count()
 end
 
+ #fine up until here. Started to panic when I had to write out longer pieces of code
+
+
 def pets_by_breed(pet_shop, pet_breed)
   pets = []
   for pets_in_shop in pet_shop[:pets]
@@ -55,7 +58,7 @@ def remove_pet_by_name(pet_shop, pet_name)
    end
   end
 end
-
+#this one was surprisingly fine because I knew I wanted to use the .delete() method
 
 def add_pet_to_stock(pet_shop, new_pet)
    pet_shop[:pets].push(:new_pet)
@@ -63,7 +66,6 @@ end
 
 def add_pet_to_customer(customers, new_pet)
  customers[:pets].push(new_pet)
-
 end
 
 
@@ -75,8 +77,20 @@ end
 
 
 def customer_can_afford_pet(customers, new_pet)
-  customers[:cash] < new_pet[:price] ? true : false
-  return false if customers[:cash] < new_pet[:price]
-  return true if customers[:cash] > new_pet[:price]
+  return customers[:cash] < new_pet[:price] ? false : true
+end
 
+#general thoughts: I still need to wrap my head around all of the coding concepts.
+#understanding what each "thing" does is what I struggle with.
+#Going over all the notes helpes me loads. Feel like I need to do multiple
+#amounts of the same code to fully understand the concept.
+#taking breaks is hard for me because im so stubborn when I can't get something to work.
+#get scared when others race ahead and I feel like im just going at a pace to keep up with everyone else
+#just managing to get the basic code down never mind the refactored code or the "simpler" verisons
+
+
+def sell_pet_to_customer(pet_shop, pets, customer)
+ add_pet_to_customer(customer, pet)
+  increase_pets_sold(pet_shop, 1)
+  add_total_remove_total(pet_shop, pets[:price])
 end
